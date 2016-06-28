@@ -1,11 +1,35 @@
 #ResideMenu
-A simple demo for reside menu using [SlidingMenu](https://github.com/jfeinstein10/SlidingMenu).
+Realize a residing-menu with [SlidingMenu](https://github.com/jfeinstein10/SlidingMenu), and refactored by Android Studio.
+With this, you can display a menu that can be dragged from left to right.
+Above all, it can be integrated to your project easily.
 
-Looks
-------
-![图片](http://img.blog.csdn.net/20140902225149282?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbWFub2Vs/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+###How to configure it
+```java
+        SlidingMenu sm = getSlidingMenu();
+        sm.setBehindOffsetRes(R.dimen.slidingmenu_offset);
+        sm.setFadeEnabled(false);
+        sm.setBehindScrollScale(0.25f);
+        sm.setFadeDegree(0.25f);
 
+        sm.setBackgroundImage(R.mipmap.img_frame_background);
+        sm.setBehindCanvasTransformer(new SlidingMenu.CanvasTransformer() {
+            @Override
+            public void transformCanvas(Canvas canvas, float percentOpen) {
+                float scale = (float) (percentOpen * 0.25 + 0.75);
+                canvas.scale(scale, scale, -canvas.getWidth() / 2,
+                        canvas.getHeight() / 2);
+            }
+        });
 
-Thanks
----------
+        sm.setAboveCanvasTransformer(new SlidingMenu.CanvasTransformer() {
+            @Override
+            public void transformCanvas(Canvas canvas, float percentOpen) {
+                float scale = (float) (1 - percentOpen * 0.25);
+                canvas.scale(scale, scale, 0, canvas.getHeight() / 2);
+            }
+        });
+
+```
+
+####Thanks
 [@jfeinstein10](https://github.com/jfeinstein10)
