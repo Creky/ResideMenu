@@ -1,6 +1,8 @@
 #ResideMenu
 Realize a residing-menu with [SlidingMenu](https://github.com/jfeinstein10/SlidingMenu), and refactored by Android Studio.
+
 With this, you can display a menu that can be dragged from left to right.
+
 Above all, it can be integrated to your project easily.
 
 ###How to configure it
