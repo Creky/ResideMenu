@@ -28,7 +28,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.jeremyfeinstein.slidingmenu.lib.CustomViewAbove.OnPageChangeListener;
-import com.sunguowei.residemenu.R;
 
 public class SlidingMenu extends RelativeLayout {
 
@@ -262,7 +261,7 @@ public class SlidingMenu extends RelativeLayout {
 		TypedArray ta = context.obtainStyledAttributes(attrs,
 				R.styleable.SlidingMenu);
 		// set the above and behind views if defined in xml
-		int mode = ta.getInt(R.styleable.SlidingMenu_mode, LEFT);
+		int mode = ta.getInt(R.styleable.SlidingMenu_SlidingMenuMode, LEFT);
 		setMode(mode);
 		int viewAbove = ta.getResourceId(R.styleable.SlidingMenu_viewAbove, -1);
 		if (viewAbove != -1) {
@@ -277,11 +276,11 @@ public class SlidingMenu extends RelativeLayout {
 		} else {
 			setMenu(new FrameLayout(context));
 		}
-		int touchModeAbove = ta.getInt(R.styleable.SlidingMenu_touchModeAbove,
+		int touchModeAbove = ta.getInt(R.styleable.SlidingMenu_SlidingMenuTouchModeAbove,
 				TOUCHMODE_MARGIN);
 		setTouchModeAbove(touchModeAbove);
 		int touchModeBehind = ta.getInt(
-				R.styleable.SlidingMenu_touchModeBehind, TOUCHMODE_MARGIN);
+				R.styleable.SlidingMenu_SlidingMenuTouchModeBehind, TOUCHMODE_MARGIN);
 		setTouchModeBehind(touchModeBehind);
 
 		int offsetBehind = (int) ta.getDimension(
