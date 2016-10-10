@@ -257,7 +257,11 @@ public class SlidingMenu extends RelativeLayout {
 			}
 		});
 
-		// now style everything!
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            setSystemUiVisibility(SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
+        }
+
+        // now style everything!
 		TypedArray ta = context.obtainStyledAttributes(attrs,
 				R.styleable.SlidingMenu);
 		// set the above and behind views if defined in xml
