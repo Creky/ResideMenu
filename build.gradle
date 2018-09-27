@@ -2,20 +2,21 @@
 
 buildscript {
     repositories {
-        jcenter()
         mavenCentral()
+        google()
+        jcenter()
+        flatDir {
+            dirs 'src/main/libs'
+        }
         maven {
             url "https://jitpack.io"
         }
         maven {
-            url 'http://oss.jfrog.org/artifactory/oss-snapshot-local'
-        }
-        maven {
-            url 'https://maven.google.com'
+            url 'https://dl.bintray.com/drummer-aidan/maven'
         }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.android.tools.build:gradle:3.3.0-alpha11'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -24,16 +25,17 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
         mavenCentral()
+        google()
+        jcenter()
+        flatDir {
+            dirs 'src/main/libs'
+        }
         maven {
             url "https://jitpack.io"
         }
         maven {
-            url 'http://oss.jfrog.org/artifactory/oss-snapshot-local'
-        }
-        maven {
-            url 'https://maven.google.com'
+            url 'https://dl.bintray.com/drummer-aidan/maven'
         }
     }
 }
